@@ -1,8 +1,9 @@
 # Ignore everything
 *
 
-# But don't ignore the out directory
+# But don't ignore the out directory and its contents
 !/out/
+!/out/**
 
 # And don't ignore .gitignore itself
 !.gitignore
