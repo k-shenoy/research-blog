@@ -27,7 +27,7 @@ export default function Home() {
           <article key={post.slug} className="group relative border border-gray-800 rounded-lg p-6 hover:border-gray-700 transition-colors">
             <div className="relative z-10">
               <h3 className="text-xl font-bold mb-2 text-white group-hover:text-gray-300 transition-colors">
-                <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-0" aria-label={post.title} />
+                <Link href={`/research-blog/blog/${post.slug}`} className="absolute inset-0 z-0" aria-label={post.title} />
                 {post.title}
               </h3>
               <p className="text-gray-400 text-sm mb-3 select-text w-fit">{post.date}</p>

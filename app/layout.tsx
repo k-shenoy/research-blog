@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,7 @@ export default function RootLayout({
         <div className="max-w-4xl mx-auto px-4 py-8">
           <header className="mb-8">
             <nav className="flex items-center justify-between">
-              <Link href="/" className="text-2xl font-bold hover:text-gray-300 transition-colors">
+              <Link href="/research-blog" className="text-2xl font-bold hover:text-gray-300 transition-colors">
                 Keshav's Blog
               </Link>
             </nav>
