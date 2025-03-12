@@ -6,6 +6,8 @@
 !/out/**
 !/.github/
 !/.github/**
+!/app/
+!/app/**
 
 # And don't ignore these files
 !.gitignore
