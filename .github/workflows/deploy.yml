@@ -32,6 +32,9 @@ jobs:
       - name: Add .nojekyll file
         run: touch out/.nojekyll
 
+      - name: List output directory
+        run: ls -la out/
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
