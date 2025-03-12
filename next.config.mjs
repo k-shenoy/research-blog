@@ -14,7 +14,7 @@ const nextConfig = {
     strictNextHead: true
   },
   // Fix static asset paths
-  assetPrefix: '.',
+  assetPrefix: '/',
   distDir: 'out'
 }
 
