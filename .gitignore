@@ -1,9 +1,11 @@
 # Ignore everything
 *
 
-# But don't ignore the out directory and its contents
+# But don't ignore these directories and their contents
 !/out/
 !/out/**
+!/.github/
+!/.github/**
 
 # And don't ignore these files
 !.gitignore
