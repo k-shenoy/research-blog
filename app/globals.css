@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+.prose {
+  @apply max-w-none;
+}
+
+.prose pre {
+  @apply bg-gray-900 border border-gray-800;
+}
+
+.prose code {
+  @apply bg-gray-900 px-1 py-0.5 rounded text-gray-200;
+}
+
+.prose img {
+  @apply rounded-lg shadow-lg;
+}
+
+.prose a {
+  @apply text-gray-300 no-underline hover:text-gray-100;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  @apply text-gray-100;
+}
+
+.prose p, .prose ul, .prose ol {
+  @apply text-gray-300;
+} 
