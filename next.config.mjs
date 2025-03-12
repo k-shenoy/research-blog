@@ -8,7 +8,8 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  trailingSlash: true
+  trailingSlash: true,
+  assetPrefix: '/research-blog'
 }
 
 const withMDX = createMDX({
