@@ -17,6 +17,7 @@
 !tailwind.config.js
 !postcss.config.js
 !tsconfig.json
+!next-env.d.ts
 
 # But still ignore these
 node_modules/

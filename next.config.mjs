@@ -4,12 +4,10 @@ import createMDX from '@next/mdx'
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   output: 'export',
-  basePath: '/research-blog',
   images: {
     unoptimized: true
   },
-  trailingSlash: true,
-  assetPrefix: '/research-blog'
+  trailingSlash: true
 }
 
 const withMDX = createMDX({
