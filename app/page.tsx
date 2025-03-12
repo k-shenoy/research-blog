@@ -15,7 +15,6 @@ export default function Home() {
   return (
     <div className="space-y-12">
       <section className="prose prose-invert">
-        <h1>Welcome to Keshav's Blog</h1>
         <p className="text-xl">
           This is where I share my thoughts, projects, and experiences in technology and development.
         </p>
