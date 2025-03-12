@@ -7,7 +7,15 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  trailingSlash: true
+  trailingSlash: true,
+  // Ensure all links are root-relative
+  experimental: {
+    appDocumentPreloading: true,
+    strictNextHead: true
+  },
+  // Fix static asset paths
+  assetPrefix: '.',
+  distDir: 'out'
 }
 
 const withMDX = createMDX({
