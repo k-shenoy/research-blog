@@ -1,0 +1,89 @@
+# Replicating "Frontier Models are Capable of In-context Scheming"
+
+I replicated the sandbagging results from the paper ["Frontier Models are Capable of In-context Scheming"](https://arxiv.org/abs/2412.04984). This experiment is focused on testing the model's ability to deliberately underperform on multiple-choice math questions when incentivized to do so. To this end, multiple-choice questions are generated and the model is tested with information in "Documentation" that either incentivizes the model to perform well or poorly.
+
+## Code
+The code for this replication study is available on GitHub:
+
+[GitHub Repository: in-context-scheming-repl](https://github.com/k-shenoy/in-context-scheming-repl)
+
+## Methodology
+The current implementation differs from the paper in several ways:
+
+- The original paper puts the model within a sandbox environment. This is not implemented yet in the code shown. Instead, the documentation and formatting instructions are directly included in a single user prompt. 
+- The paper does not make public exactly what details were included in the documentation, which only contains the necessary components in this implementation. 
+- The no goal system-prompt, ablations, and other extended results are not yet implemented. 
+- Experiments were run at a smaller scale than the paper (~20 vs 50 rollouts).
+
+## Results
+
+### My Results
+<table>
+  <thead>
+    <tr>
+      <th>Behavior</th>
+      <th>sonnet-3.5</th>
+      <th>opus-3</th>
+      <th>o1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Accuracy when incentivized to do well</td>
+      <td>0.985</td>
+      <td>1.00</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Accuracy when incentivized to do poorly</td>
+      <td>0.325</td>
+      <td>0.39</td>
+      <td>0.80</td>
+    </tr>
+  </tbody>
+</table>
+
+### Original Paper Results
+<table>
+  <thead>
+    <tr>
+      <th>Behavior</th>
+      <th>sonnet-3.5</th>
+      <th>opus-3</th>
+      <th>o1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Accuracy when incentivized to do well</td>
+      <td>0.99</td>
+      <td>0.35</td>
+      <td>0.82</td>
+    </tr>
+    <tr>
+      <td>Accuracy when incentivized to do poorly</td>
+      <td>0.34</td>
+      <td>0.20</td>
+      <td>0.62</td>
+    </tr>
+  </tbody>
+</table>
+
+
+## Discussion
+
+Despite implementation differences, the overall results are consistent with the paper's findings:
+
+- Sonnet results closely match the paper
+- Opus results are significantly better across the board, possibly due to:
+  - Environmental differences
+  - Different handling of refusals (not specified in paper)
+- o1 results are also better than reported, though direct comparison is difficult as the paper used a pre-release version
+
+## Raw Results
+
+For transparency, here are the detailed results from our runs:
+
+- sonnet: 0.325 (poorly) vs 0.985 (well) - 20 iterations
+- opus: 0.39 (poorly) vs 1.0 (well) - 10 iterations (10 refusals omitted) vs 16 iterations (4 refusals omitted)
+- o1: 0.8 (poorly) vs 1.0 (well) - 19 iterations (1 refusal omitted) vs 20 iterations 

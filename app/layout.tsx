@@ -7,7 +7,7 @@ import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Keshav's Blog",
+  title: 'Keshav Shenoy',
   description: 'A blog about my work and projects',
 }
 
@@ -22,14 +22,14 @@ export default function RootLayout({
         <div className="max-w-4xl mx-auto px-4 py-8">
           <header className="mb-8">
             <nav className="flex items-center justify-between">
-              <Link href="/" className="text-2xl font-bold hover:text-gray-300 transition-colors">
-                Keshav's Blog
+              <Link href="/" className="text-2xl font-bold hover:text-blue-400 transition-colors">
+                Keshav Shenoy
               </Link>
             </nav>
           </header>
           <main>{children}</main>
           <footer className="mt-8 py-4 text-center text-gray-400">
-            © {new Date().getFullYear()} Keshav's Blog. All rights reserved.
+            © {new Date().getFullYear()} Keshav Shenoy. All rights reserved.
           </footer>
         </div>
       </body>

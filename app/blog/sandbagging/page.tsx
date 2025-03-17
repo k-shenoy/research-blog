@@ -1,5 +1,5 @@
 import ClientContent from './ClientContent'
 
-export default function SamplePost() {
+export default function SandbaggingPost() {
   return <ClientContent />
 } 
