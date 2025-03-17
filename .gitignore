@@ -8,6 +8,8 @@
 !/.github/**
 !/app/
 !/app/**
+!/public/
+!/public/**
 
 # And don't ignore these files
 !.gitignore
