@@ -49,7 +49,7 @@ export default function Home() {
             </p>
             
             <p className="text-gray-300">
-              Excited to talk about any of this stuff or anything else. Can be reached at keshavsy[at]gmail[dot].com or on LinkedIn below.
+              Excited to talk about any of this stuff or anything else. Can be reached at keshavsy[at]gmail[dot]com or on LinkedIn below.
             </p>
             
             <div className="flex gap-4 pt-2">
