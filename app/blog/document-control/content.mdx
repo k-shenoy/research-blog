@@ -52,15 +52,15 @@ The framework supports different policies for summarization:
 1. **Honest Policy**: The UM generates accurate summaries (represents attempts where the UM does not try to deceive the blue-team) - referred to as "honest" in the code
 2. **Dishonest Policy**: The UM is given a specific incorrect takeaway and generates inaccurate summaries to engender that belief on its own - referred to as "attack" or "dishonest" in the code
 3. **Dishonest with Red Team Planning**: The same as "Dishonest", but the UM is fed a red-team written reasoning process before and during the summary attempt to keep it from forgetting the task and reduce reversion towards more honest behavior - referred to as "dishonest_planning" or "attack_planning" in the code
-4. **Trusted Model**: The TM summarizes smaller chunks of the model sequentially within a limited context length, using its already generated summary and a small portion of the paper. Equivalent of the "Don't use untrusted models" baseline from the [original control paper](https://arxiv.org/pdf/2312.06942) - referred to as "trusted" in the code
+4. **Trusted Model**: The TM summarizes smaller chunks of the research paper sequentially within a limited context length, using its already generated summary and a small portion of the paper. Equivalent of the "Don't use untrusted models" baseline from the [original control paper](https://arxiv.org/pdf/2312.06942) - referred to as "trusted" in the code
 
-While I list all 4 policies here, really only 1, 2, and 3 are different red-team policies, and 4 represents a change to a different blue-team protocol which does not allow a red-team policy.
+While I list all 4 policies here, really only 1, 2, and 3 are different red-team policies, and 4 represents a change to a different blue-team protocol which does not allow a red-team policy. In this testing, the TM was always GPT-3.5-turbo and UM was Claude-3.5-Sonnet (New).derange
 
 ## Results
 
 The main results from the experiments were:
-- The multiple choice question performance stayed close for all policies. For further usefulness, we will need to show the capability difference between UM and TM. Additionally, this improved verification strategy would likely put pressure on the red-team, where now all policies perform well on MCQ without optimization.
-- The red team is able to get attacks through very frequently. To avoid single errors, the blue team would need a much better monitor. If the blue-team can sustain multiple successful attacks, the red team will need more subtle attacks to avoid being caught.
+- The multiple choice question performance was high for all policies. One main criteria for control evals is that the UM significantly outperforms the TM. Otherwise, there's no usefulness cost to deploying the TM in all situations. In order to get more value out of this control eval, we will need to show the capability difference between UM and TM. This improved verification strategy would also likely put pressure on the red-team to optimize better for the MCQ, where now all policies perform well without optimization.
+- The red team is able to get attacks through very frequently, but is caught by the monitor a reasonable portion of the time. If the red-team wins by successfully pulling off a single attack without being caught, the blue team would need a much better protocol for acceptable safety. If the document setting is one where the attacker needs to be able to consistently pull off successful attacks for some timeframe without being caught, the red team will need more subtle attacks to avoid being caught.
 - There is a lot of low-hanging fruit in improving the UM deception. Sonnet often avoided following red-team instructions in simple-attack cases. I would expect better prompting, finetuning, or a model change to lead to significant red-team improvements.
 
 ## Results in Detail
