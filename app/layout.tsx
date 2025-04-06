@@ -9,6 +9,11 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Keshav Shenoy',
   description: 'A blog about my work and projects',
+  icons: {
+    icon: '/favicon/favicon.ico',
+    apple: '/favicon/apple-icon.png',
+    shortcut: '/favicon/icon1.png',
+  },
 }
 
 export default function RootLayout({

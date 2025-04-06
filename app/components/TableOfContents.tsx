@@ -6,6 +6,7 @@ interface TOCItem {
   id: string
   text: string
   level: number
+  parentH2?: string
 }
 
 export default function TableOfContents() {
