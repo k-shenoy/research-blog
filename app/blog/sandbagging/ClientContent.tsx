@@ -1,12 +1,12 @@
 'use client'
 
 import Content from './content.mdx'
-import MDXContent from '../../components/MDXContent'
+import BlogPostWrapper from '../../components/BlogPostWrapper'
 
 export default function ClientContent() {
   return (
-    <MDXContent>
+    <BlogPostWrapper>
       <Content />
-    </MDXContent>
+    </BlogPostWrapper>
   )
 } 
