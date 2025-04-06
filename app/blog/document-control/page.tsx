@@ -1,5 +1,5 @@
 import ClientContent from './ClientContent'
 
-export default function SandbaggingPost() {
+export default function DocumentControlPost() {
   return <ClientContent />
-} 
+}

@@ -4,6 +4,12 @@ import Image from 'next/image'
 
 const blogPosts = [
   {
+    slug: 'document-control',
+    title: 'A New Control Eval for Summarizing Paper Results ',
+    date: 'April 5, 2025',
+    description: 'A preliminary evaluation framework for measuring AI control on document summarization tasks, testing if an untrusted model can mislead while evading detection.'
+  },
+  {
     slug: 'sandbagging',
     title: 'Replicating "Frontier Models are Capable of In-context Scheming"',
     date: 'March 12, 2025',

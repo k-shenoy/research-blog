@@ -9,4 +9,4 @@ export default function ClientContent() {
       <Content />
     </MDXContent>
   )
-} 
+}
