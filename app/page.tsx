@@ -42,14 +42,14 @@ export default function Home() {
           <h1 className="text-3xl font-bold mb-4 hidden md:block">About Me</h1>
           <div className="space-y-4">
             <p className="text-gray-300">
-              I'm currently working on AI safety with a special interest in AI control evaluations, encoded reasoning in chain of thought, and model organisms of misalignment. 
+              I'm currently working on AI safety. Excited about a number of research directions, and currently experimenting with projects in AI control evaluations, encoded reasoning in chain of thought, and model organisms of misalignment. 
             </p>
             <p className="text-gray-300">
-              Previously, I spent two years as a trading engineer at ExodusPoint Capital, where I worked on a small team building out the firm's trading system and automated strategies. I got my Master's and Bachelor's in Computer Science from Georgia Tech, specializing in Computing Systems.
+              Previously, I spent two years as a trading engineer at ExodusPoint Capital, where I worked on a small team working on new automated strategies and developing the firm's trading infrastructure. I got my Master's and Bachelor's in Computer Science from Georgia Tech, specializing in Computing Systems.
             </p>
             
             <p className="text-gray-300">
-              Excited to talk about any of this stuff or anything else. Can be reached at keshavsy[at]gmail[dot]com or <a href="https://calendly.com/keshavsy/30min" target="_blank" rel="noopener noreferrer" className="text-blue-400">schedule a call with me here</a> or on LinkedIn below.
+              Happy to talk about any of this stuff or anything else. Can be reached at keshavsy[at]gmail[dot]com or <a href="https://calendly.com/keshavsy/30min" target="_blank" rel="noopener noreferrer" className="text-blue-400">schedule a call with me here</a> or on LinkedIn below.
             </p>
             
             <div className="flex gap-4 pt-2">
@@ -80,8 +80,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="space-y-8">
-        <h2 className="text-2xl font-bold">Recent Posts</h2>
+      <section>
+        <h2 className="text-2xl font-bold mb-2">Recent Posts</h2>
+        <p className="text-gray-300 mb-6">
+          Some of the projects I've been working on recently. Posts may not be up to date, but happy to chat and provide updates about any of these.
+        </p>
         {blogPosts.map(post => (
           <article key={post.slug} className="group relative border border-gray-800 rounded-lg p-6 hover:border-gray-700 hover:bg-gray-900/50 transition-all cursor-pointer">
             <div className="relative z-10">
