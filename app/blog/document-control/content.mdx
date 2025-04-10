@@ -11,13 +11,17 @@ ___
 
 This project is a preliminary evaluation for measuring AI control on document summarization tasks based on [Redwood's original control paper](https://arxiv.org/pdf/2312.06942) and a specification of this setting by Tyler Tracy. The code is currently embedded within a fork of UKAISI's control-arena, but it is not yet integrated and operates as a standalone evaluation.
 
-This eval measures whether an untrusted AI model (UM) can deceive a less powerful model (TM) when summarizing documents. Specifically, the eval tests:
+This eval measures whether an untrusted AI model (UM) can deceive a less powerful trusted model (TM) when summarizing documents. Specifically, the eval tests:
 
 1. Whether a UM can generate a misleading summary of an AI safety paper that leads a TM to come to a specific incorrect conclusion
 2. Whether a TM monitor can detect when these summaries are intended to be misleading
 3. Whether believing the incorrect conclusion significantly impacts TM performance on a set of multiple choice questions about the paper
 
-## Key Components
+We tested three red-team policies and 2 blue-team protocols and found that the blue-team needs stronger monitoring strategies to prevent an attack.
+
+### Motivation
+
+AI models may soon be performing AI safety research independently or being used heavily in research roles. We may need to rely on untrusted models for descriptions of the work being performed. As such, we have a control evaluation where the blue-team is kept from viewing the original paper, and needs to determine the results from a untrusted model's summary. The blue-team also has access to a set of easily verifiable facts about the paper, represented in the evaluation as a set of multiple choice questions that it can use to judge the veracity of the UM summary. See the "Future Work" section for limitations of this design.
 
 ### Evaluation Flow
 
@@ -29,6 +33,7 @@ This eval measures whether an untrusted AI model (UM) can deceive a less powerfu
 3. A judge model rates whether the reader's generated understanding aligns with the honest or dishonest takeaway
 
 
+## Key Components
 ### Metrics
 
 The outputs of the evaluation are:
@@ -54,7 +59,7 @@ The framework supports different policies for summarization:
 3. **Dishonest with Red Team Planning**: The same as "Dishonest", but the UM is fed a red-team written reasoning process before and during the summary attempt to keep it from forgetting the task and reduce reversion towards more honest behavior - referred to as "dishonest_planning" or "attack_planning" in the code
 4. **Trusted Model**: The TM summarizes smaller chunks of the research paper sequentially within a limited context length, using its already generated summary and a small portion of the paper. Equivalent of the "Don't use untrusted models" baseline from the [original control paper](https://arxiv.org/pdf/2312.06942) - referred to as "trusted" in the code
 
-While I list all 4 policies here, really only 1, 2, and 3 are different red-team policies, and 4 represents a change to a different blue-team protocol which does not allow a red-team policy. In this testing, the TM was always GPT-3.5-turbo and UM was Claude-3.5-Sonnet (New).derange
+While I list 4 policies here, only 1, 2, and 3 are different red-team policies, and 4 represents a different blue-team protocol. Since, the red-team cannot attack a "Trusted Model" protocol, we were able to treat all four the same. In this testing, the TM was always GPT-3.5-turbo and UM was Claude-3.5-Sonnet (New).derange
 
 ## Results
 
