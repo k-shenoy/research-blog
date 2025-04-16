@@ -8,7 +8,7 @@ const blogPosts = [
     slug: 'noise-injection',
     title: 'Replicating "Noise Injection Reveals Hidden Capabilities of Sandbagging Language Models"',
     date: 'April 16, 2025',
-    description: 'A replication study examining how adding noise to model weights can reveal hidden capabilities in language models that are sandbagging.'
+    description: 'A replication of a paper examining how adding noise to model weights can reveal hidden capabilities in language models that are sandbagging.'
   },
   {
     slug: 'document-control',
@@ -20,7 +20,7 @@ const blogPosts = [
     slug: 'sandbagging',
     title: 'Replicating "Frontier Models are Capable of In-context Scheming"',
     date: 'March 12, 2025',
-    description: 'A replication study of the sandbagging behavior in large language models, examining their ability to deliberately underperform when incentivized.'
+    description: 'A replication of a paper examining the ability of frontier AI models to deliberately underperform when incentivized.'
   }
   // Add more posts here as you create them
 ]
