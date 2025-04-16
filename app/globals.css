@@ -8,30 +8,302 @@
   }
 }
 
+/* Base Styling */
+body {
+  background-color: #0f172a; /* slate-900 */
+  color: #f3f4f6; /* gray-100 */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+article.blog-content {
+  background-color: #1e293b; /* slate-800 */
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+/* Light Mode Overrides */
+html.light-mode body {
+  background-color: #f1f5f9; /* gray-100 */
+  color: #1f2937; /* gray-800 */
+}
+
+html.light-mode article.blog-content {
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+html.light-mode .border-slate-700 {
+  border-color: #e5e7eb !important; /* gray-200 */
+}
+
+/* Default (Dark) Prose Styles */
 .prose {
-  @apply max-w-none;
+  max-width: none;
+  color: #d1d5db; /* gray-300 */
 }
 
-.prose pre {
-  @apply bg-gray-900 border border-gray-800;
+.prose h1, 
+.prose h2, 
+.prose h3, 
+.prose h4 {
+  color: #f9fafb; /* gray-50 */
 }
 
-.prose code {
-  @apply bg-gray-900 px-1 py-0.5 rounded text-gray-200;
+.prose h2 {
+  border-left: 4px solid #10b981; /* emerald-500 */
+  padding-left: 0.75rem;
 }
 
-.prose img {
-  @apply rounded-lg shadow-lg;
+.prose p, 
+.prose ul, 
+.prose ol {
+  color: #d1d5db; /* gray-300 */
 }
 
 .prose a {
-  @apply text-gray-300 no-underline hover:text-gray-100;
+  color: #34d399; /* emerald-400 */
+  text-decoration: none;
 }
 
-.prose h1, .prose h2, .prose h3, .prose h4 {
-  @apply text-gray-100;
+.prose a:hover {
+  color: #6ee7b7; /* emerald-300 */
 }
 
-.prose p, .prose ul, .prose ol {
-  @apply text-gray-300;
-} 
+.prose img {
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #334155; /* slate-700 */
+}
+
+.prose pre {
+  background-color: #111827; /* gray-900 */
+  border: 1px solid #1f2937; /* gray-800 */
+}
+
+.prose code {
+  background-color: #1e293b; /* slate-800 */
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  color: #6ee7b7; /* emerald-300 */
+}
+
+/* Table Styles */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prose th {
+  background-color: #334155; /* slate-700 */
+  color: #f3f4f6; /* gray-100 */
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  text-align: left;
+  padding: 0.75rem 1rem;
+}
+
+.prose td {
+  background-color: #1e293b; /* slate-800 */
+  color: #d1d5db; /* gray-300 */
+  border-top: 1px solid #334155; /* slate-700 */
+  padding: 0.75rem 1rem;
+}
+
+/* Light Mode Prose Overrides */
+html.light-mode .prose {
+  color: #374151; /* gray-700 */
+}
+
+html.light-mode .prose h1, 
+html.light-mode .prose h2, 
+html.light-mode .prose h3, 
+html.light-mode .prose h4 {
+  color: #111827; /* gray-900 */
+}
+
+html.light-mode .prose p, 
+html.light-mode .prose ul, 
+html.light-mode .prose ol {
+  color: #374151; /* gray-700 */
+}
+
+html.light-mode .prose a {
+  color: #059669; /* emerald-600 */
+}
+
+html.light-mode .prose a:hover {
+  color: #047857; /* emerald-700 */
+}
+
+html.light-mode .prose img {
+  border: 1px solid #e5e7eb; /* gray-200 */
+}
+
+html.light-mode .prose pre {
+  background-color: #f3f4f6; /* gray-100 */
+  border: 1px solid #e5e7eb; /* gray-200 */
+}
+
+html.light-mode .prose code {
+  background-color: #f3f4f6; /* gray-100 */
+  color: #059669; /* emerald-600 */
+}
+
+/* Light Mode Table Styles */
+html.light-mode .prose th {
+  background-color: #e5e7eb; /* gray-200 */
+  color: #111827; /* gray-900 */
+}
+
+html.light-mode .prose td {
+  background-color: white;
+  color: #374151; /* gray-700 */
+  border-top: 1px solid #e5e7eb; /* gray-200 */
+}
+
+/* Navigation and Cards */
+.nav-link {
+  color: #f3f4f6; /* gray-100 */
+}
+
+html.light-mode .nav-link {
+  color: #111827; /* gray-900 */
+}
+
+.blog-card {
+  border: 1px solid #334155; /* slate-700 */
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.blog-card:hover {
+  border-color: #059669; /* emerald-600 */
+  background-color: #1e293b; /* slate-800 */
+}
+
+html.light-mode .blog-card {
+  border-color: #e5e7eb; /* gray-200 */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+html.light-mode .blog-card:hover {
+  border-color: #34d399; /* emerald-400 */
+  background-color: #f9fafb; /* gray-50 */
+}
+
+.blog-title {
+  color: white;
+}
+
+.blog-title:hover {
+  color: #34d399; /* emerald-400 */
+}
+
+html.light-mode .blog-title {
+  color: #111827; /* gray-900 */
+}
+
+html.light-mode .blog-title:hover {
+  color: #059669; /* emerald-600 */
+}
+
+.blog-date {
+  color: #9ca3af; /* gray-400 */
+}
+
+html.light-mode .blog-date {
+  color: #6b7280; /* gray-500 */
+}
+
+.blog-description {
+  color: #d1d5db; /* gray-300 */
+}
+
+html.light-mode .blog-description {
+  color: #374151; /* gray-700 */
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+  background-color: #1e293b; /* slate-800 */
+  color: #f3f4f6; /* gray-100 */
+  border: 1px solid #334155; /* slate-700 */
+  border-radius: 9999px;
+  padding: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover {
+  background-color: #334155; /* slate-700 */
+}
+
+html.light-mode .theme-toggle {
+  background-color: white;
+  color: #1f2937; /* gray-800 */
+  border-color: #e5e7eb; /* gray-200 */
+}
+
+html.light-mode .theme-toggle:hover {
+  background-color: #f9fafb; /* gray-50 */
+}
+
+/* Main Page Text Styles */
+.main-text {
+  color: #d1d5db; /* gray-300 */
+}
+
+html.light-mode .main-text {
+  color: #1f2937; /* gray-800 */
+}
+
+/* Table of Contents Styles */
+.toc-heading {
+  color: #9ca3af; /* gray-400 */
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+html.light-mode .toc-heading {
+  color: #4b5563; /* gray-600 */
+}
+
+.toc-link {
+  color: #9ca3af; /* gray-400 */
+  transition: color 0.2s;
+}
+
+.toc-link:hover {
+  color: #d1d5db; /* gray-300 */
+}
+
+.toc-link-active {
+  color: #34d399; /* emerald-400 */
+}
+
+html.light-mode .toc-link {
+  color: #6b7280; /* gray-500 */
+}
+
+html.light-mode .toc-link:hover {
+  color: #374151; /* gray-700 */
+}
+
+html.light-mode .toc-link-active {
+  color: #059669; /* emerald-600 */
+}
+
+.toc-divider {
+  border-color: #1e293b; /* slate-800 */
+}
+
+html.light-mode .toc-divider {
+  border-color: #d1d5db; /* gray-300 */
+}

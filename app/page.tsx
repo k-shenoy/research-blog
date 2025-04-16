@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import ThemeToggle from './components/ThemeToggle'
 
 const blogPosts = [
   {
@@ -27,12 +28,13 @@ const blogPosts = [
 export default function Home() {
   return (
     <div className="space-y-12">
+      <ThemeToggle />
 
       <section className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-6">
         <div className="md:col-span-1">
           <h1 className="text-3xl font-bold mb-4 md:hidden">About Me</h1>
           <div className="relative w-48 h-48 mx-auto md:w-full md:h-auto md:pb-[100%]">
-            <div className="absolute inset-0 rounded-full overflow-hidden border-2 border-gray-800">
+            <div className="absolute inset-0 rounded-full overflow-hidden border-2 border-slate-700">
               <Image
                 src="/profile.jpg"
                 alt="Keshav Shenoy"
@@ -47,14 +49,14 @@ export default function Home() {
         <div className="md:col-span-3">
           <h1 className="text-3xl font-bold mb-4 hidden md:block">About Me</h1>
           <div className="space-y-4">
-            <p className="text-gray-300">
+            <p className="main-text">
               I'm currently working on AI safety. Excited about a number of research directions, and currently experimenting with projects in AI control evaluations, encoded reasoning in chain of thought, and model organisms of misalignment. 
             </p>
-            <p className="text-gray-300">
+            <p className="main-text">
               Previously, I spent two years as a trading engineer at ExodusPoint Capital, where I worked on a small team working on new automated strategies and developing the firm's trading infrastructure. I got my Master's and Bachelor's in Computer Science from Georgia Tech, specializing in Computing Systems.
             </p>
             
-            <p className="text-gray-300">
+            <p className="main-text">
               Happy to talk about any of this stuff or anything else. Can be reached at keshavsy[at]gmail[dot]com or <a href="https://calendly.com/keshavsy/30min" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300">schedule a call with me here</a> or on LinkedIn below.
             </p>
             
@@ -63,7 +65,7 @@ export default function Home() {
                 href="https://github.com/k-shenoy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-200 transition-colors"
+                className="text-gray-400 hover:text-emerald-400 transition-colors"
                 aria-label="GitHub"
               >
                 <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
@@ -74,7 +76,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/keshav-shenoy/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-200 transition-colors"
+                className="text-gray-400 hover:text-emerald-400 transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
@@ -88,19 +90,19 @@ export default function Home() {
 
       <section>
         <h2 className="text-2xl font-bold mb-2">Recent Posts</h2>
-        <p className="text-gray-300 mb-6">
+        <p className="main-text mb-6">
           Some of the projects I've been working on recently. Posts may not be up to date, but happy to chat and provide updates about any of these.
         </p>
         <div className="space-y-6">
         {blogPosts.map(post => (
-          <article key={post.slug} className="group relative border border-slate-800 rounded-lg p-6 hover:border-emerald-900 hover:bg-slate-900 transition-all cursor-pointer">
+          <article key={post.slug} className="group relative blog-card p-6 cursor-pointer">
             <div className="relative z-10">
-              <h3 className="text-xl font-bold mb-2 text-white group-hover:text-emerald-400 transition-colors">
+              <h3 className="text-xl font-bold mb-2 blog-title transition-colors">
                 <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-0" aria-label={post.title} />
                 {post.title}
               </h3>
-              <p className="text-gray-400 text-sm mb-3 select-text w-fit">{post.date}</p>
-              <p className="text-gray-300 select-text w-fit">{post.description}</p>
+              <p className="blog-date text-sm mb-3 select-text w-fit">{post.date}</p>
+              <p className="blog-description select-text w-fit">{post.description}</p>
             </div>
             <div className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-600 group-hover:text-gray-400 group-hover:translate-x-2 transition-all">
               →
