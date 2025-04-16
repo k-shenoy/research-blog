@@ -50,7 +50,9 @@ html.light-mode .border-slate-700 {
 
 .prose p, 
 .prose ul, 
-.prose ol {
+.prose ol,
+.prose li,
+.prose li p {
   color: #d1d5db; /* gray-300 */
 }
 
@@ -126,10 +128,12 @@ html.light-mode .prose p {
   color: #374151; /* gray-700 */
 }
 
-/* Make list items darker in light mode */
+/* Make list items match normal text in light mode */
 html.light-mode .prose ul, 
-html.light-mode .prose ol {
-  color: #1f2937; /* gray-800 */
+html.light-mode .prose ol,
+html.light-mode .prose li,
+html.light-mode .prose li > * {
+  color: #374151 !important; /* gray-700 - same as paragraph text */
 }
 
 /* Fix bold text in light mode */
@@ -169,6 +173,60 @@ html.light-mode .prose td {
   background-color: white;
   color: #374151; /* gray-700 */
   border-top: 1px solid #e5e7eb; /* gray-200 */
+}
+
+/* Main Page Text Styles */
+.main-text {
+  color: #d1d5db; /* gray-300 */
+}
+
+html.light-mode .main-text {
+  color: #1f2937; /* gray-800 */
+}
+
+/* Table of Contents Styles */
+.toc-heading {
+  color: #9ca3af; /* gray-400 */
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+html.light-mode .toc-heading {
+  color: #4b5563; /* gray-600 */
+}
+
+.toc-link {
+  color: #9ca3af; /* gray-400 */
+  transition: color 0.2s;
+}
+
+.toc-link:hover {
+  color: #d1d5db; /* gray-300 */
+}
+
+.toc-link-active {
+  color: #34d399; /* emerald-400 */
+}
+
+html.light-mode .toc-link {
+  color: #6b7280; /* gray-500 */
+}
+
+html.light-mode .toc-link:hover {
+  color: #374151; /* gray-700 */
+}
+
+html.light-mode .toc-link-active {
+  color: #047857; /* emerald-700 */
+}
+
+.toc-divider {
+  border-color: #1e293b; /* slate-800 */
+}
+
+html.light-mode .toc-divider {
+  border-color: #d1d5db; /* gray-300 */
 }
 
 /* Navigation and Cards */
@@ -260,58 +318,4 @@ html.light-mode .theme-toggle {
 
 html.light-mode .theme-toggle:hover {
   background-color: #f9fafb; /* gray-50 */
-}
-
-/* Main Page Text Styles */
-.main-text {
-  color: #d1d5db; /* gray-300 */
-}
-
-html.light-mode .main-text {
-  color: #1f2937; /* gray-800 */
-}
-
-/* Table of Contents Styles */
-.toc-heading {
-  color: #9ca3af; /* gray-400 */
-  font-weight: 600;
-  font-size: 1.125rem;
-  margin-bottom: 0.5rem;
-}
-
-html.light-mode .toc-heading {
-  color: #4b5563; /* gray-600 */
-}
-
-.toc-link {
-  color: #9ca3af; /* gray-400 */
-  transition: color 0.2s;
-}
-
-.toc-link:hover {
-  color: #d1d5db; /* gray-300 */
-}
-
-.toc-link-active {
-  color: #34d399; /* emerald-400 */
-}
-
-html.light-mode .toc-link {
-  color: #6b7280; /* gray-500 */
-}
-
-html.light-mode .toc-link:hover {
-  color: #374151; /* gray-700 */
-}
-
-html.light-mode .toc-link-active {
-  color: #047857; /* emerald-700 */
-}
-
-.toc-divider {
-  border-color: #1e293b; /* slate-800 */
-}
-
-html.light-mode .toc-divider {
-  border-color: #d1d5db; /* gray-300 */
 }
