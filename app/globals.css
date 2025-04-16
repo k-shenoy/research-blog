@@ -15,21 +15,15 @@ body {
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
+/* No blog post background box - traditional full width layout */
 article.blog-content {
-  background-color: #1e293b; /* slate-800 */
-  border-radius: 0.5rem;
-  padding: 2rem;
+  padding: 1rem 0;
 }
 
 /* Light Mode Overrides */
 html.light-mode body {
   background-color: #f1f5f9; /* gray-100 */
   color: #1f2937; /* gray-800 */
-}
-
-html.light-mode article.blog-content {
-  background-color: white;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 html.light-mode .border-slate-700 {
@@ -58,6 +52,11 @@ html.light-mode .border-slate-700 {
 .prose ul, 
 .prose ol {
   color: #d1d5db; /* gray-300 */
+}
+
+/* Fix bold text color in dark mode */
+.prose strong {
+  color: #f3f4f6; /* gray-100 */
 }
 
 .prose a {
@@ -123,18 +122,27 @@ html.light-mode .prose h4 {
   color: #111827; /* gray-900 */
 }
 
-html.light-mode .prose p, 
-html.light-mode .prose ul, 
-html.light-mode .prose ol {
+html.light-mode .prose p {
   color: #374151; /* gray-700 */
 }
 
+/* Make list items darker in light mode */
+html.light-mode .prose ul, 
+html.light-mode .prose ol {
+  color: #1f2937; /* gray-800 */
+}
+
+/* Fix bold text in light mode */
+html.light-mode .prose strong {
+  color: #111827; /* gray-900 */
+}
+
 html.light-mode .prose a {
-  color: #059669; /* emerald-600 */
+  color: #047857; /* emerald-700 */
 }
 
 html.light-mode .prose a:hover {
-  color: #047857; /* emerald-700 */
+  color: #065f46; /* emerald-800 */
 }
 
 html.light-mode .prose img {
@@ -148,7 +156,7 @@ html.light-mode .prose pre {
 
 html.light-mode .prose code {
   background-color: #f3f4f6; /* gray-100 */
-  color: #059669; /* emerald-600 */
+  color: #047857; /* emerald-700 */
 }
 
 /* Light Mode Table Styles */
@@ -206,7 +214,7 @@ html.light-mode .blog-title {
 }
 
 html.light-mode .blog-title:hover {
-  color: #059669; /* emerald-600 */
+  color: #047857; /* emerald-700 */
 }
 
 .blog-date {
@@ -297,7 +305,7 @@ html.light-mode .toc-link:hover {
 }
 
 html.light-mode .toc-link-active {
-  color: #059669; /* emerald-600 */
+  color: #047857; /* emerald-700 */
 }
 
 .toc-divider {
