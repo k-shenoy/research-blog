@@ -108,7 +108,7 @@ export default function TableOfContents() {
               className={`
                 block transition-colors
                 ${heading.level === 2 ? 'ml-4' : ''}
-                ${activeId === heading.id ? 'text-blue-400' : 'text-gray-400 hover:text-gray-300'}
+                ${activeId === heading.id ? 'text-emerald-400' : 'text-gray-400 hover:text-gray-300'}
               `}
               onClick={(e) => {
                 e.preventDefault()
@@ -120,14 +120,14 @@ export default function TableOfContents() {
             
             {/* Show h3s under active h2 */}
             {heading.level === 2 && heading.id === activeH2Id && activeH3s.length > 0 && (
-              <ul className="mt-1 ml-3 space-y-1 border-l-2 border-gray-800 pl-2">
+              <ul className="mt-1 ml-3 space-y-1 border-l-2 border-emerald-800 pl-2">
                 {activeH3s.map(h3 => (
                   <li key={h3.id}>
                     <a 
                       href={`#${h3.id}`} 
                       className={`
                         block text-sm transition-colors
-                        ${activeId === h3.id ? 'text-blue-400' : 'text-gray-500 hover:text-gray-300'}
+                        ${activeId === h3.id ? 'text-emerald-400' : 'text-gray-500 hover:text-gray-300'}
                       `}
                       onClick={(e) => {
                         e.preventDefault()

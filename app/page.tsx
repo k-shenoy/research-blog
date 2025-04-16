@@ -4,6 +4,12 @@ import Image from 'next/image'
 
 const blogPosts = [
   {
+    slug: 'noise-injection',
+    title: 'Replicating "Noise Injection Reveals Hidden Capabilities of Sandbagging Language Models"',
+    date: 'April 16, 2025',
+    description: 'A replication study examining how adding noise to model weights can reveal hidden capabilities in language models that are sandbagging.'
+  },
+  {
     slug: 'document-control',
     title: 'A New Control Eval for Summarizing Paper Results ',
     date: 'April 5, 2025',
@@ -49,7 +55,7 @@ export default function Home() {
             </p>
             
             <p className="text-gray-300">
-              Happy to talk about any of this stuff or anything else. Can be reached at keshavsy[at]gmail[dot]com or <a href="https://calendly.com/keshavsy/30min" target="_blank" rel="noopener noreferrer" className="text-blue-400">schedule a call with me here</a> or on LinkedIn below.
+              Happy to talk about any of this stuff or anything else. Can be reached at keshavsy[at]gmail[dot]com or <a href="https://calendly.com/keshavsy/30min" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300">schedule a call with me here</a> or on LinkedIn below.
             </p>
             
             <div className="flex gap-4 pt-2">
@@ -85,10 +91,11 @@ export default function Home() {
         <p className="text-gray-300 mb-6">
           Some of the projects I've been working on recently. Posts may not be up to date, but happy to chat and provide updates about any of these.
         </p>
+        <div className="space-y-6">
         {blogPosts.map(post => (
-          <article key={post.slug} className="group relative border border-gray-800 rounded-lg p-6 hover:border-gray-700 hover:bg-gray-900/50 transition-all cursor-pointer">
+          <article key={post.slug} className="group relative border border-slate-800 rounded-lg p-6 hover:border-emerald-900 hover:bg-slate-900 transition-all cursor-pointer">
             <div className="relative z-10">
-              <h3 className="text-xl font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">
+              <h3 className="text-xl font-bold mb-2 text-white group-hover:text-emerald-400 transition-colors">
                 <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-0" aria-label={post.title} />
                 {post.title}
               </h3>
@@ -100,6 +107,7 @@ export default function Home() {
             </div>
           </article>
         ))}
+        </div>
       </section>
     </div>
   )

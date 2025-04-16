@@ -23,11 +23,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} bg-black text-gray-100 min-h-screen`}>
+      <body className={`${inter.className} bg-slate-950 text-gray-100 min-h-screen`}>
         <div className="max-w-5xl mx-auto px-4 py-8">
           <header className="mb-8">
             <nav className="flex items-center justify-between">
-              <Link href="/" className="text-2xl font-bold hover:text-blue-400 transition-colors">
+              <Link href="/" className="text-2xl font-bold hover:text-emerald-400 transition-colors">
                 Keshav Shenoy
               </Link>
             </nav>
