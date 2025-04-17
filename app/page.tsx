@@ -53,7 +53,7 @@ export default function Home() {
               I'm currently working on AI safety. Excited about a number of research directions, and currently experimenting with projects in AI control evaluations, encoded reasoning in chain of thought, and model organisms of misalignment. 
             </p>
             <p className="main-text">
-              Previously, I spent two years as a trading engineer at ExodusPoint Capital, where I worked on a small team working on new automated strategies and developing the firm's trading infrastructure. I got my Master's and Bachelor's in Computer Science from Georgia Tech, specializing in Computing Systems.
+              Previously, I spent two years as a trading engineer at ExodusPoint Capital, where I worked on a small team developing new automated strategies and building the firm's trading infrastructure. I got my Master's and Bachelor's in Computer Science from Georgia Tech, specializing in Computing Systems.
             </p>
             
             <p className="main-text">
