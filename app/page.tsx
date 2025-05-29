@@ -57,7 +57,7 @@ export default function Home() {
             </p>
             
             <p className="main-text">
-              Happy to talk about any of this stuff or anything else. Can be reached at keshavsy[at]gmail[dot]com or <a href="https://calendly.com/keshavsy/30min" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300">schedule a call with me here</a> or on LinkedIn below.
+              Happy to talk about any of this stuff or anything else. Can be reached at keshavsy[at]gmail[dot]com or <a href="https://calendly.com/keshavsy/30min" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300">schedule a call with me here</a> or message me on LinkedIn below.
             </p>
             
             <div className="flex gap-4 pt-2">
@@ -87,7 +87,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+1
       <section>
         <h2 className="text-2xl font-bold mb-2">Recent Posts</h2>
         <p className="main-text mb-6">
