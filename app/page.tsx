@@ -12,7 +12,7 @@ const blogPosts = [
   },
   {
     slug: 'document-control',
-    title: 'A New Control Eval for Summarizing Paper Results ',
+    title: 'A New Control Eval for Summarizing Paper Results',
     date: 'April 5, 2025',
     description: 'A preliminary control evaluation for document summarization tasks. Can an untrusted model lie about the results of a paper while evading detection?'
   },

@@ -1,0 +1,34 @@
+# Claude's Implementation of the Dominion Board Game
+
+This is playable implementation of the classic Dominion deck-building game, built with React and TypeScript with Claude Code. The game supports 2 players and includes the core mechanics from the original game. Please see my [other post for the rationale and process for building the game](). This is intended mostly as a proof-of-concept. Please check out [this website](https://dominion.games/) for a fully supported version of the game from the publishers.
+
+## How to Play
+
+Dominion is a deck-building game where players start with identical decks and purchase cards from a shared supply to build unique strategies. Each turn consists of three phases:
+
+1. **Action Phase**: Play one Action card (if you have one and choose to)
+2. **Buy Phase**: Play Treasure cards and buy one card from the supply
+3. **Clean-up Phase**: Discard all cards and draw a new hand of 5 cards
+
+The game ends when 3 supply piles are empty or the Province pile is empty. The player with the most Victory Points wins!
+
+## Game Implementation
+
+The game below includes:
+- All basic cards (Copper, Silver, Gold, Estate, Duchy, Province, Curse)
+- The Kingdom cards from the base set
+- Full turn management and game state tracking
+- Automatic deck shuffling and card drawing
+- Victory point calculation and game end detection
+
+## Bugs
+
+There are likely a number of bugs in the game.
+
+- Moneylender forces copper trash
+- Merchant doesn't apply silver effect 
+- Artisan doesn't seem to put the card directly into hand
+- Throne room pulls a popup but doesn't seem to correctly trigger the card twice or put it in play
+- Moat reaction to block actions doesn't work
+
+Click "Start New Game" to begin playing!
