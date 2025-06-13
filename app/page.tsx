@@ -87,7 +87,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-1
       <section>
         <h2 className="text-2xl font-bold mb-2">Recent Posts</h2>
         <p className="main-text mb-6">
