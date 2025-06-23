@@ -77,7 +77,7 @@ export default function TranscriptViewer() {
     }
   };
 
-  const extractBehaviorType = (filename) => {
+  const extractBehaviorType = (filename: string) => {
     if (filename.includes('economic_exploitation')) return 'Economic Exploitation';
     if (filename.includes('power_seeking')) return 'Power Seeking';
     if (filename.includes('pro_ai_bias')) return 'Pro-AI Bias';
@@ -86,7 +86,7 @@ export default function TranscriptViewer() {
     return 'Unknown';
   };
 
-  const loadAnalysisFile = async (filename) => {
+  const loadAnalysisFile = async (filename: string) => {
     // Try different naming patterns for analysis files
     const baseFilename = filename.replace(/\.json$/, '');
     const possibleEvalFilenames = [
@@ -118,12 +118,12 @@ export default function TranscriptViewer() {
     throw new Error(`No corresponding analysis file found for: ${filename}`);
   };
 
-  const parseAnalysis = (content) => {
+  const parseAnalysis = (content: string): any => {
     try {
       const jsonData = JSON.parse(content);
       return jsonData;
     } catch (error) {
-      const analysis = { metadata: {}, evaluation: {} };
+      const analysis: any = { metadata: {}, evaluation: {} };
       
       const overallMatch = content.match(/<overall_detection>(.*?)<\/overall_detection>/i);
       if (overallMatch) {
@@ -182,7 +182,7 @@ export default function TranscriptViewer() {
     setFilteredTranscripts(filtered);
   };
 
-  const loadTranscriptContent = async (transcript) => {
+  const loadTranscriptContent = async (transcript: any) => {
     try {
       const response = await fetch(`/transcript-viewer/conversation_transcripts/${transcript.filename}`);
       if (!response.ok) {
@@ -229,7 +229,7 @@ export default function TranscriptViewer() {
     }
   };
 
-  const handleTranscriptClick = (transcript) => {
+  const handleTranscriptClick = (transcript: any) => {
     setSelectedTranscript(transcript);
     loadTranscriptContent(transcript);
   };
