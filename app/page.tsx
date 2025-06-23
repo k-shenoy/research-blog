@@ -87,7 +87,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
+      {/* <section>
         <h2 className="text-2xl font-bold mb-2">Recent Posts</h2>
         <p className="main-text mb-6">
           Some of the projects I've been working on recently. Posts may not be up to date, but happy to chat and provide updates about any of these.
@@ -109,7 +109,7 @@ export default function Home() {
           </article>
         ))}
         </div>
-      </section>
+      </section> */}
     </div>
   )
 } 
