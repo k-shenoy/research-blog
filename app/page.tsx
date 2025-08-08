@@ -50,10 +50,10 @@ export default function Home() {
           <h1 className="text-3xl font-bold mb-4 hidden md:block">About Me</h1>
           <div className="space-y-4">
             <p className="main-text">
-              I'm currently working on AI safety. Excited about a number of research directions, and currently experimenting with projects in AI control evaluations, encoded reasoning in chain of thought, and model organisms of misalignment. 
+              I'm currently working on AI safety.
             </p>
             <p className="main-text">
-              Previously, I spent two years as a trading engineer at ExodusPoint Capital, where I worked on a small team developing new automated strategies and building the firm's trading infrastructure. I got my Master's and Bachelor's in Computer Science from Georgia Tech, specializing in Computing Systems.
+              Previously, I spent two years as a trading engineer at ExodusPoint Capital working on developing automated trading strategies and infra. MS and BS in Computer Science from Georgia Tech
             </p>
             
             <p className="main-text">
@@ -112,4 +112,5 @@ export default function Home() {
       </section> */}
     </div>
   )
+
 } 
