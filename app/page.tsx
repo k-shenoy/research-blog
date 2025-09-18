@@ -50,7 +50,7 @@ export default function Home() {
           <h1 className="text-3xl font-bold mb-4 hidden md:block">About Me</h1>
           <div className="space-y-4">
             <p className="main-text">
-              I'm currently working on AI safety.
+              I'm currently working on AI safety as an Anthropic Research Fellow.
             </p>
             <p className="main-text">
               Previously, I spent two years as a trading engineer at ExodusPoint Capital working on developing automated trading strategies and infra. MS and BS in Computer Science from Georgia Tech
@@ -114,3 +114,4 @@ export default function Home() {
   )
 
 } 
+
