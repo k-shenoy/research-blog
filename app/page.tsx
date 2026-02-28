@@ -50,10 +50,10 @@ export default function Home() {
           <h1 className="text-3xl font-bold mb-4 hidden md:block">About Me</h1>
           <div className="space-y-4">
             <p className="main-text">
-              I'm currently working on AI safety as an Anthropic Research Fellow.
+              I'm currently working on reducing existential risks from AI as a research fellow at Redwood Research.
             </p>
             <p className="main-text">
-              Previously, I spent two years as a trading engineer at ExodusPoint Capital working on developing automated trading strategies and infra. MS and BS in Computer Science from Georgia Tech
+              Previously, I spent eight months developing introspection adapters as an Anthropic Safety Fellow and spent two years as a trading engineer at ExodusPoint Capital working on developing automated trading strategies and infra. MS and BS in Computer Science from Georgia Tech
             </p>
             
             <p className="main-text">
@@ -114,4 +114,5 @@ export default function Home() {
   )
 
 } 
+
 
