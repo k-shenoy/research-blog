@@ -60,6 +60,11 @@ export default function Home() {
               Happy to talk about any of this stuff or anything else. Can be reached at keshavsy[at]gmail[dot]com or <a href="https://calendly.com/keshavsy/30min" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300">schedule a call with me here</a> or message me on LinkedIn below.
             </p>
             
+            <p className="main-text">
+              Always happy to receive feedback!{' '}
+              <a href="https://www.admonymous.co/kshenoy" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300">admonymous.co/kshenoy</a>
+            </p>
+
             <div className="flex gap-4 pt-2">
               <a 
                 href="https://github.com/k-shenoy"
