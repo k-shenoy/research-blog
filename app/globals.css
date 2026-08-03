@@ -360,6 +360,44 @@ html.light-mode .post-row-date {
   color: #7d786d;
 }
 
+/* Mirror link and disclaimer balance each other across the row, like the post rows above */
+.blog-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #334155; /* slate-700 */
+  color: #6b7280; /* gray-500 */
+  font-size: 0.8125rem;
+}
+
+/* Muted rather than emerald, so a footer link doesn't outshout the post titles */
+.blog-footer-link {
+  color: #9ca3af; /* gray-400 */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.blog-footer-link:hover {
+  color: #34d399; /* emerald-400 */
+}
+
+html.light-mode .blog-footer {
+  border-top-color: #e0dbd1;
+  color: #9a9488;
+}
+
+html.light-mode .blog-footer-link {
+  color: #7d786d;
+}
+
+html.light-mode .blog-footer-link:hover {
+  color: #065f46; /* emerald-800 */
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
   position: fixed;

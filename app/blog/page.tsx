@@ -15,6 +15,11 @@ const posts: Post[] = [
     date: 'May 23, 2026',
     slug: 'some-things-i-liked-and-thought-this-year',
   },
+  {
+    title: 'going vegan is better than the first-order math suggests',
+    date: 'June 15, 2025',
+    slug: 'going-vegan-is-better-than-the-first-order-math-suggests',
+  },
 ]
 
 export const metadata = {
@@ -37,6 +42,18 @@ export default function BlogIndex() {
           </li>
         ))}
       </ul>
+
+      <div className="blog-footer">
+        <a
+          href="https://substack.com/@keshavks"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="blog-footer-link"
+        >
+          also mirrored on substack
+        </a>
+        <span>All views are my own, not my employer&apos;s</span>
+      </div>
     </div>
   )
 }
