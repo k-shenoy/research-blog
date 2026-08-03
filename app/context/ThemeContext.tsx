@@ -12,20 +12,16 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  // Initialize theme from localStorage or default to dark
-  const [theme, setTheme] = useState<Theme>('dark')
-  
+  // Initialize theme from localStorage or default to light
+  const [theme, setTheme] = useState<Theme>('light')
+
   useEffect(() => {
-    // Load saved theme from localStorage on client-side
+    // Load saved theme from localStorage on client-side. The inline script in
+    // the layout has already applied the class, so this only syncs React state.
     const savedTheme = localStorage.getItem('theme') as Theme
-    if (savedTheme) {
-      setTheme(savedTheme)
-      if (savedTheme === 'light') {
-        document.documentElement.classList.add('light-mode')
-      } else {
-        document.documentElement.classList.remove('light-mode')
-      }
-    }
+    const initialTheme: Theme = savedTheme === 'dark' ? 'dark' : 'light'
+    setTheme(initialTheme)
+    document.documentElement.classList.toggle('light-mode', initialTheme === 'light')
   }, [])
   
   // Function to toggle theme

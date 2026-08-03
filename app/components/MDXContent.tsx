@@ -13,7 +13,7 @@ const components = {
   a: (props: any) => (
     <a 
       {...props} 
-      className="!inline-flex !items-center !gap-1 dark:!text-emerald-400 dark:hover:!text-emerald-300 light-mode:!text-emerald-600 light-mode:hover:!text-emerald-700 !transition-colors"
+      className="mdx-link !inline-flex !items-center !gap-1 !transition-colors"
       target={props.href?.startsWith('http') ? '_blank' : undefined}
       rel={props.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
     >
@@ -24,6 +24,7 @@ const components = {
     </a>
   ),
   ul: (props: any) => <ul className="list-disc list-outside mb-4 ml-5 space-y-2" {...props} />,
+  ol: (props: any) => <ol className="list-decimal list-outside mb-4 ml-5 space-y-2" {...props} />,
   li: (props: any) => <li className="dark:text-gray-300 light-mode:text-gray-700" {...props} />,
   table: (props: any) => <div className="overflow-x-auto mb-8"><table className="min-w-full table-auto border-collapse rounded-lg overflow-hidden" {...props} /></div>,
   th: (props: any) => <th className="px-4 py-3 dark:bg-slate-700 light-mode:bg-gray-200 text-left font-medium dark:text-gray-100 light-mode:text-gray-800 uppercase text-sm tracking-wider" {...props} />,

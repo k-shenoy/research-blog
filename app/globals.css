@@ -20,14 +20,14 @@ article.blog-content {
   padding: 1rem 0;
 }
 
-/* Light Mode Overrides */
+/* Light Mode Overrides — warm paper tone rather than a bright cool white */
 html.light-mode body {
-  background-color: #f1f5f9; /* gray-100 */
-  color: #1f2937; /* gray-800 */
+  background-color: #f4f1ea;
+  color: #2f2c27;
 }
 
 html.light-mode .border-slate-700 {
-  border-color: #e5e7eb !important; /* gray-200 */
+  border-color: #e0dbd1 !important;
 }
 
 /* Default (Dark) Prose Styles */
@@ -114,18 +114,18 @@ html.light-mode .border-slate-700 {
 
 /* Light Mode Prose Overrides */
 html.light-mode .prose {
-  color: #374151; /* gray-700 */
+  color: #3d3931;
 }
 
 html.light-mode .prose h1, 
 html.light-mode .prose h2, 
 html.light-mode .prose h3, 
 html.light-mode .prose h4 {
-  color: #111827; /* gray-900 */
+  color: #23211c;
 }
 
 html.light-mode .prose p {
-  color: #374151; /* gray-700 */
+  color: #3d3931;
 }
 
 /* Make list items match normal text in light mode */
@@ -133,55 +133,94 @@ html.light-mode .prose ul,
 html.light-mode .prose ol,
 html.light-mode .prose li,
 html.light-mode .prose li > * {
-  color: #374151 !important; /* gray-700 - same as paragraph text */
+  color: #3d3931 !important; /* same as paragraph text */
 }
 
 /* Fix bold text in light mode */
 html.light-mode .prose strong {
-  color: #111827; /* gray-900 */
+  color: #23211c;
 }
 
 html.light-mode .prose a {
-  color: #047857; /* emerald-700 */
-}
-
-html.light-mode .prose a:hover {
   color: #065f46; /* emerald-800 */
 }
 
+html.light-mode .prose a:hover {
+  color: #064e3b; /* emerald-900 */
+}
+
 html.light-mode .prose img {
-  border: 1px solid #e5e7eb; /* gray-200 */
+  border: 1px solid #e0dbd1;
 }
 
 html.light-mode .prose pre {
-  background-color: #f3f4f6; /* gray-100 */
-  border: 1px solid #e5e7eb; /* gray-200 */
+  background-color: #ece8df;
+  border: 1px solid #e0dbd1;
 }
 
 html.light-mode .prose code {
-  background-color: #f3f4f6; /* gray-100 */
-  color: #047857; /* emerald-700 */
+  background-color: #ece8df;
+  color: #065f46; /* emerald-800 */
 }
 
 /* Light Mode Table Styles */
 html.light-mode .prose th {
-  background-color: #e5e7eb; /* gray-200 */
-  color: #111827; /* gray-900 */
+  background-color: #e7e2d8;
+  color: #23211c;
 }
 
 html.light-mode .prose td {
-  background-color: white;
-  color: #374151; /* gray-700 */
-  border-top: 1px solid #e5e7eb; /* gray-200 */
+  background-color: #faf8f3;
+  color: #3d3931;
+  border-top: 1px solid #e0dbd1;
 }
 
 /* Main Page Text Styles */
 .main-text {
   color: #d1d5db; /* gray-300 */
+  line-height: 1.7;
 }
 
 html.light-mode .main-text {
-  color: #1f2937; /* gray-800 */
+  color: #3d3931;
+}
+
+/* Links: emerald reads bright on dark, so light mode needs a much darker shade */
+.main-link,
+.mdx-link {
+  color: #34d399 !important; /* emerald-400 */
+  text-decoration: none;
+}
+
+.main-link:hover,
+.mdx-link:hover {
+  color: #6ee7b7 !important; /* emerald-300 */
+}
+
+html.light-mode .main-link,
+html.light-mode .mdx-link {
+  color: #065f46 !important; /* emerald-800 */
+}
+
+html.light-mode .main-link:hover,
+html.light-mode .mdx-link:hover {
+  color: #064e3b !important; /* emerald-900 */
+}
+
+.social-link {
+  color: #9ca3af; /* gray-400 */
+}
+
+.social-link:hover {
+  color: #34d399; /* emerald-400 */
+}
+
+html.light-mode .social-link {
+  color: #6b665c;
+}
+
+html.light-mode .social-link:hover {
+  color: #065f46; /* emerald-800 */
 }
 
 /* Table of Contents Styles */
@@ -193,7 +232,7 @@ html.light-mode .main-text {
 }
 
 html.light-mode .toc-heading {
-  color: #4b5563; /* gray-600 */
+  color: #6b665c;
 }
 
 .toc-link {
@@ -210,15 +249,15 @@ html.light-mode .toc-heading {
 }
 
 html.light-mode .toc-link {
-  color: #6b7280; /* gray-500 */
+  color: #7d786d;
 }
 
 html.light-mode .toc-link:hover {
-  color: #374151; /* gray-700 */
+  color: #3d3931;
 }
 
 html.light-mode .toc-link-active {
-  color: #047857; /* emerald-700 */
+  color: #065f46; /* emerald-800 */
 }
 
 .toc-divider {
@@ -226,7 +265,7 @@ html.light-mode .toc-link-active {
 }
 
 html.light-mode .toc-divider {
-  border-color: #d1d5db; /* gray-300 */
+  border-color: #e0dbd1;
 }
 
 /* Navigation and Cards */
@@ -235,60 +274,90 @@ html.light-mode .toc-divider {
 }
 
 html.light-mode .nav-link {
-  color: #111827; /* gray-900 */
+  color: #23211c;
 }
 
-.blog-card {
-  border: 1px solid #334155; /* slate-700 */
-  border-radius: 0.5rem;
-  transition: all 0.2s;
+html.light-mode .nav-link:hover {
+  color: #065f46; /* emerald-800 */
 }
 
-.blog-card:hover {
-  border-color: #059669; /* emerald-600 */
-  background-color: #1e293b; /* slate-800 */
+.nav-tab {
+  color: #9ca3af; /* gray-400 */
+  font-weight: 500;
 }
 
-html.light-mode .blog-card {
-  border-color: #e5e7eb; /* gray-200 */
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
-html.light-mode .blog-card:hover {
-  border-color: #34d399; /* emerald-400 */
-  background-color: #f9fafb; /* gray-50 */
-}
-
-.blog-title {
-  color: white;
-}
-
-.blog-title:hover {
+.nav-tab:hover {
   color: #34d399; /* emerald-400 */
 }
 
-html.light-mode .blog-title {
-  color: #111827; /* gray-900 */
+html.light-mode .nav-tab {
+  color: #6b665c;
 }
 
-html.light-mode .blog-title:hover {
-  color: #047857; /* emerald-700 */
+html.light-mode .nav-tab:hover {
+  color: #065f46; /* emerald-800 */
 }
 
-.blog-date {
+/* Date line under a post title */
+.post-date {
   color: #9ca3af; /* gray-400 */
+  font-size: 0.875rem;
+  margin-top: -1.5rem;
+  margin-bottom: 2.5rem;
 }
 
-html.light-mode .blog-date {
-  color: #6b7280; /* gray-500 */
+html.light-mode .post-date {
+  color: #7d786d;
 }
 
-.blog-description {
-  color: #d1d5db; /* gray-300 */
+/* GFM marks the footnotes heading sr-only, so give the section its own divider */
+.prose section[data-footnotes] {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #334155; /* slate-700 */
+  font-size: 0.9375rem;
 }
 
-html.light-mode .blog-description {
-  color: #374151; /* gray-700 */
+html.light-mode .prose section[data-footnotes] {
+  border-top-color: #e0dbd1;
+}
+
+/* Blog index rows */
+.post-row-link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+}
+
+.post-row-title {
+  color: #f3f4f6; /* gray-100 */
+  font-size: 1.0625rem;
+  transition: color 0.2s;
+}
+
+.post-row-link:hover .post-row-title {
+  color: #34d399; /* emerald-400 */
+}
+
+.post-row-date {
+  color: #9ca3af; /* gray-400 */
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+html.light-mode .post-row-title {
+  color: #23211c;
+}
+
+html.light-mode .post-row-link:hover .post-row-title {
+  color: #065f46; /* emerald-800 */
+}
+
+html.light-mode .post-row-date {
+  color: #7d786d;
 }
 
 /* Theme Toggle Button */
@@ -311,11 +380,11 @@ html.light-mode .blog-description {
 }
 
 html.light-mode .theme-toggle {
-  background-color: white;
-  color: #1f2937; /* gray-800 */
-  border-color: #e5e7eb; /* gray-200 */
+  background-color: #faf8f3;
+  color: #3d3931;
+  border-color: #e0dbd1;
 }
 
 html.light-mode .theme-toggle:hover {
-  background-color: #f9fafb; /* gray-50 */
+  background-color: #ece8df;
 }

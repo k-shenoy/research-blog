@@ -23,22 +23,31 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} min-h-screen transition-colors duration-200 
+    <html lang="en" className="dark light-mode" suppressHydrationWarning>
+      <head>
+        {/* Apply the saved theme before first paint. Light is the default. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{document.documentElement.classList.toggle('light-mode',localStorage.getItem('theme')!=='dark')}catch(e){}`,
+          }}
+        />
+      </head>
+      <body className={`${inter.className} min-h-screen transition-colors duration-200
         bg-slate-900 text-gray-100`}>
         <ThemeProvider>
-          <div className="max-w-5xl mx-auto px-4 py-8">
-            <header className="mb-8">
-              <nav className="flex items-center justify-between">
-                <Link href="/" className="text-2xl font-bold nav-link hover:text-emerald-400 transition-colors">
+          <div className="max-w-4xl mx-auto px-6 pt-24 pb-32">
+            <header className="mb-14">
+              {/* Tabs sit next to the name, not flush right, to clear the fixed theme toggle */}
+              <nav className="flex items-baseline gap-6">
+                <Link href="/" className="text-xl font-semibold nav-link transition-colors">
                   Keshav Shenoy
+                </Link>
+                <Link href="/blog" className="nav-tab transition-colors">
+                  blog
                 </Link>
               </nav>
             </header>
             <main>{children}</main>
-            <footer className="mt-8 py-4 text-center dark:text-gray-400 light-mode:text-gray-500">
-              © {new Date().getFullYear()} Keshav Shenoy. All rights reserved.
-            </footer>
           </div>
         </ThemeProvider>
       </body>
