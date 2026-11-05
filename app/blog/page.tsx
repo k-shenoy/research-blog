@@ -11,6 +11,11 @@ type Post = {
 // Only posts listed here are shown. Older drafts under app/blog/* stay unlisted.
 const posts: Post[] = [
   {
+    title: 'what changes made me more productive?',
+    date: 'November 5, 2026',
+    slug: 'what-changes-made-me-more-productive',
+  },
+  {
     title: 'some things I liked and thought this year',
     date: 'May 23, 2026',
     slug: 'some-things-i-liked-and-thought-this-year',
